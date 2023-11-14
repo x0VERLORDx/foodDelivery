@@ -29,10 +29,14 @@ public class User {
     @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "second_name")
-    private String secondName;
+    @Column(name = "last_name")
+    private String lastName;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<Address> addresses = new ArrayList<>();
+
+//    @ManyToOne(optional = false)
+//    @JoinColumn(name = "role_id")
+//    private Role role;
 
 }
